@@ -1,0 +1,19 @@
+name: Java 单元测试
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+      - name: 设置 JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: 编译并测试 Java (仅做基础编译验证)
+        run: |
+          javac BankAccount.java
+          echo "Java 编译成功！"
