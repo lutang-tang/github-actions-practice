@@ -33,6 +33,6 @@ class OrderSystem:
 
         # VIP 用户额外 95折
         if user_level == "vip":
-            total = total * 1.05
+            total = total * 0.95
 
         return round(total, 2)
